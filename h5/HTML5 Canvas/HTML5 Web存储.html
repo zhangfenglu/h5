@@ -1,0 +1,16 @@
+<html>
+<body>
+    <div id="result"></div>
+    <script>
+        if(typeof(Storage) !== "undefined")
+        {
+            localStorage.setItem("lastname","Gates");
+            document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        }else
+        {
+            document.getElementById("result").innerHTML = "浏览器不支持webStorage";
+        }
+    </script>
+</body>
+
+</html>
