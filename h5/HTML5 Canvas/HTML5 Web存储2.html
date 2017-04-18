@@ -1,0 +1,28 @@
+<html>
+<body>
+    <script type="text/javascript">
+    function clickCounter()
+    {
+        if(typeof(Storage) !== "undefined")
+        {
+            if(sessionStorage.clickcount)
+            {
+                sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+            }
+            else
+            {
+                sessionStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = "在本session 中，您已经点击了这个按钮" + sessionStorage.clickcount + "次";
+        }
+        else
+        {
+            document.getElementById("result").innerHTML = "浏览器不支持webStorage";
+        }
+    }
+    </script>
+    <p><button onclick="clickCounter()" type="button" >点击这里</button></p>
+    <div id="result"></div>
+</body>
+
+</html>
